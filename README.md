@@ -1,4 +1,4 @@
-# ihash
+# iHash
 Perceptual hashing library in python (with redis)
 
 ## How to use it
