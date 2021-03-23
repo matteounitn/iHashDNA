@@ -1,0 +1,7 @@
+ImageHash==4.0
+numpy==1.18.2
+Pillow==7.1.1
+pottery==0.71
+redis==3.4.1
+scipy==1.4.1
+
