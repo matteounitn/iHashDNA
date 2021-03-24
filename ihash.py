@@ -13,17 +13,16 @@ class imagehash:
         self.phashdb_clean = RedisDict(redis=self.redis, key='phashdb_clean')  # whitelist
         self.whashdb_clean = RedisDict(redis=self.redis, key='whashdb_clean')  # whitelist
 
-    # chiamata effettiva da fare
+
     def do_hash_check(self, path: str, bias=0.0, limit=30, whash_treshold=8, phash_threshold=16, bounces=None):
         img = Image.open(path)
-        # print(f"[detection]: phash {phash} - whash {whash}")
         phash_check, phash_value = self.check_hash(im.phash(img), True, bias,
-                                                   threshold=phash_threshold, bounces=bounces)  # controllo il phash
-        if not phash_check:  # se è false
-            if 0 <= phash_value <= limit:  # controlla quanto era sotto il limite
+                                                   threshold=phash_threshold, bounces=bounces)  # check phash
+        if not phash_check:  # if false
+            if 0 <= phash_value <= limit:  # check how much under the limit
                 whash_check, whash_value = self.check_hash(im.whash(img), False, bias=bias,
                                                            threshold=whash_treshold, bounces=bounces)
-                return whash_check  # ritorna whash_check
+                return whash_check  # return whash_check
             else:
                 whash_check, whash_value = self.check_hash(im.whash(img), False, bias=bias,
                                                            threshold=int(whash_treshold / 2), bounces=bounces)
