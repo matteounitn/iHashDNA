@@ -5,7 +5,7 @@ from redis import Redis
 import numpy as np
 
 
-class imagehash:
+class ihashdna:
     def __init__(self, redis_url):
         self.redis = Redis.from_url(redis_url)
         self.phashdb = RedisDict(redis=self.redis, key='phashdb')  # blacklist
