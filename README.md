@@ -50,6 +50,8 @@ Remember that <u>this is not ML-Based.</u>
 
 It can be easily bypassed by cropping the image. 
 
+[Here you will find an interesting article that evaluates the various functions of perceptual hashing.](https://tech.okcupid.com/evaluating-perceptual-image-hashes-okcupid/)
+
 This library is a wannabe [PhotoDNA](https://en.wikipedia.org/wiki/PhotoDNA).
 
 ## How to use it
